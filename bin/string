@@ -14,14 +14,14 @@ $str = new StringHelper('THIS IS TEST STRING');
 try {
     $str->notExistsMethod();
 
-    $db->connect();
+    //$db->connect();
     // logic...
-} catch (BadMethodCallException $e) {
+} catch (\BadMethodCallException $e) {
     echo $e->getMessage() . \PHP_EOL;
 } catch (\RuntimeException $e) {
 
 } finally {
-    $db->disconnect();
+    //$db->disconnect();
 }
 
 echo $str->toLowerCase()->firstLetterToUpper() . \PHP_EOL;

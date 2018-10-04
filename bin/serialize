@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+
+<?php
+
+require_once __DIR__ . "/../src/dz/serializer/Serializer.php";
+require_once __DIR__ . "/../src/dz/serializer/JsonSerializer.php";
+require_once __DIR__ . "/../src/dz/serializer/YamlSerializer.php";
+require_once __DIR__ . "/../src/dz/serializer/XmlSerializer.php";
+require_once __DIR__ . "/../src/dz/testClass/testA.php";
+require_once __DIR__ . "/../src/dz/testClass/testB.php";
+require_once __DIR__ . "/../src/dz/testClass/testC.php";
+
+$a = new testA('Petr', 'Ivanov', 1);
+$b = new testB('Vova', 'Petrov', 2);
+$c = new testC('Saha', 'Sidoro', 3);
+
+$serializer = new Serializer();
+$serializer->addFormat(new JsonSerializer());
+$serializer->addFormat(new YamlSerializer());
+$serializer->addFormat(new XmlSerializer());
+var_dump($serializer->serialize($a));
+var_dump($serializer->serialize($b));
+var_dump($serializer->serialize($c));

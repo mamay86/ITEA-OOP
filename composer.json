@@ -1,0 +1,14 @@
+{
+    "name": "roma/itea",
+    "authors": [
+        {
+            "name": "Roman",
+            "email": "karlson2006@ukr.net"
+        }
+    ],
+    "require": {
+        "symfony/yaml": "^4.1",
+        "symfony/serializer": "^4.1",
+        "symfony/property-access": "^4.1"
+    }
+}
