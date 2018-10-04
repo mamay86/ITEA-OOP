@@ -1,0 +1,27 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . '/../src/StringHelper.php';
+
+StringHelper::macro('firstLetterToUpper', function () {
+    $this->str = \ucfirst($this->str);
+
+    return $this;
+});
+
+$str = new StringHelper('THIS IS TEST STRING');
+
+try {
+    $str->notExistsMethod();
+
+    $db->connect();
+    // logic...
+} catch (BadMethodCallException $e) {
+    echo $e->getMessage() . \PHP_EOL;
+} catch (\RuntimeException $e) {
+
+} finally {
+    $db->disconnect();
+}
+
+echo $str->toLowerCase()->firstLetterToUpper() . \PHP_EOL;

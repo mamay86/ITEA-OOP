@@ -1,17 +1,29 @@
 #!/usr/bin/env php
 <?php
+
 require_once __DIR__ . '/../src/Person.php';
 
-echo PERSON::getOldest() . \PHP_EOL;
+echo Person::getOldest() . \PHP_EOL;
 
-$p1 = new Person('Petr', 'Ivanov');
+$p1 = new Person('Petr', 'Ivanov', 151);
 $p2 = new Person('Anna', 'Petrova', 26);
 $p3 = new Person('Kolya', 'Ivanov');
 $p3->setAge(32);
-$p1->setAge(151);
 
 echo $p1->getFirstName() . \PHP_EOL;
 echo $p2->getLastName() . \PHP_EOL;
 echo $p2->getAge() . \PHP_EOL;
 
 echo Person::getOldest() . \PHP_EOL;
+
+echo $p1;
+
+var_dump(json_encode($p1));
+
+$p1->firstName = 'Petro';
+var_dump($p1->firstName);
+
+var_dump(isset($p1->firstName));
+
+unset($p1->firstName);
+var_dump($p1->firstName);

@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . '/../src/RobotEmployee.php';
+require_once __DIR__ . '/../src/HumanEmployee.php';
+require_once __DIR__ . '/../src/Boss.php';
+
+$boss = new Boss();
+$boss->addEmployee(new HumanEmployee());
+$boss->addEmployee(new RobotEmployee());
+$boss->addEmployee(new HumanEmployee());
+$boss->starWork();
